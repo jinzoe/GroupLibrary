@@ -1,0 +1,64 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+.first-nav{
+  width: 400rpx;
+  height: 180rpx;
+  line-height: 180rpx;
+  font-family: "黑体";
+  font-size: 1.5em;
+  background-color: #FFFFaa;
+  margin: 40rpx;
+  color: gray;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50rpx;
+}
+.sec-nav{
+  width: 200rpx;
+  height: 90rpx;
+  font-size: 0.8em;
+  line-height: 90rpx;
+  background-color: #7e57c2;
+  margin: 20rpx;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 30rpx;
+  opacity: .8;
+  display: inline-block;
+}
+.hideEntry{
+  /* display: none; */
+  transition:transform 1000ms ease 0ms;
+  transform:scale(0);
+  transform-origin:50% 50% 0px; 
+}
+.showEntry{
+  transition:transform 1000ms ease 0ms;
+  transform:scale(1);
+  transform-origin:50% 50% 0px; 
+}
+.footer-menu{
+  margin:auto;
+  text-align:center;
+  font-size:0.8em;
+  color:grey;
+  text-decoration:underline;
+}
+
+

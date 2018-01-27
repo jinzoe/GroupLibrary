@@ -1,0 +1,8 @@
+button{
+  margin: 30rpx;
+  border-radius: 15rpx;
+}
+
+.bookitem{
+  margin: 30rpx;
+}

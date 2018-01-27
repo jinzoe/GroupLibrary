@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="menu">
+    <button disabled="{{!isLogin}}" class='first-nav' bindtap=' borrow'>BORROW</button>
+    <button disabled="{{!isLogin}}" class='first-nav' bindtap=' return'>RETURN</button>
+    <button disabled="{{!isLogin}}" class='first-nav' bindtap='entryList'>ENTRY</button>
+    <view class="{{entryStatus}}">
+      <navigator  class='sec-nav' url='../entry/entry'>扫码录入</navigator>
+      <navigator  class='sec-nav' url='../handentry/handentry' >手工录入</navigator>
+    </view>
+    <block wx:if="{{isLeader}}">
+      <navigator class="footer-menu">组织管理</navigator>
+    </block>
+    <block wx:if="{{!isLeader}}">
+      <navigator class="footer-menu">退出组织</navigator>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<view name="bookdetails">
+  <view class='bookdetails' >
+    <view class='bookitem'>
+      <label>书名：</label>
+      <label>{{title}}{{ bookinfo.title }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>副标题：</label>
+      <label>{{ bookinfo.subtitle }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>作者：</label>
+      <label>{{ bookinfo.author }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>译者：</label>
+      <label>{{ bookinfo.translator }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>页数：</label>
+      <label>{{ bookinfo.pages }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>出版社：</label>
+      <label>{{ bookinfo.publisher }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>价格：</label>
+      <label>{{ bookinfo.price }}</label>
+    </view> 
+    <view class='bookitem'>
+      <label>状态：</label>
+      <label>{{ bookinfo.status }}</label>
+    </view> 
+    
+    <!-- <view class='bookitem'>
+      <image src="{{bookinfo.image}}" class='bookcover'></image>
+    </view> -->
+    <picker class="weui-btn" mode="date" value="{{date}}" title="tetle" start="{{date}}" end="2018-09-01" bindchange="bindDateChange" data-referbook="{{bookinfo.id}}">
+      <button bindtap='borrow'>借阅</button>
+    </picker>
+    <button bindtap='preorder'>预约</button>
+  </view>
+</view>

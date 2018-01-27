@@ -1,0 +1,89 @@
+<view class="container">
+  <view class="page-body">
+     <view class="page-section">
+      <block wx:if="{{recording === false && playing === false && hasRecord === false}}">
+        <view class="page-body-time">
+          <text class="time-big">{{formatedRecordTime}}</text>
+        </view>
+        <view class="page-body-buttons">
+          <view class="page-body-button"></view>
+          <view class="page-body-button" bindtap="startRecord">
+            <view class="button-start-record button-record">start</view>
+          </view>
+          <view class="page-body-button"></view>
+        </view>
+      </block>
+      <block wx:if="{{recording === true}}">
+        <view class="page-body-time">
+          <text class="time-big">{{formatedRecordTime}}</text>
+        </view>
+        <view class="page-body-buttons">
+          <view class="page-body-button"></view>
+          <view class="page-body-button" bindtap="stopRecord">
+            <view class="button-stop-record button-record">pause</view>
+          </view>
+          <view class="page-body-button"></view>
+        </view>
+      </block>
+      <block wx:if="{{hasRecord === true && playing === false}}">
+        <view class="page-body-time">
+          <text class="time-big">{{formatedPlayTime}}</text>
+          <text class="time-small">{{formatedRecordTime}}</text>
+        </view>
+        <view class="page-body-buttons">
+          <view class="page-body-button"></view>
+          <view class="page-body-button" bindtap="playVoice">
+            <view class="button-play-record button-record">play</view>
+          </view>
+          <view class="page-body-button" bindtap="clear">
+          <view class="button-trash-record button-record">trash</view>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{hasRecord === true && playing === true}}">
+        <view class="page-body-time">
+          <text class="time-big">{{formatedPlayTime}}</text>
+          <text class="time-small">{{formatedRecordTime}}</text>
+        </view>
+        <view class="page-body-buttons">
+          <view class="page-body-button" bindtap="stopVoice">
+            <view class="button-stop-record button-record">stop</view>
+          </view>
+           <view class="page-body-button" bindtap="pauseVoice">
+             <view class="button-play-record button-record">play</view>
+          </view> 
+          <view class="page-body-button" bindtap="clear">
+          <view class="button-trash-record button-record">trash</view>
+          </view>
+        </view>
+      </block>
+    </view>
+ 
+
+    <!-- <view class="page-body-time">
+      <text class="time-big">{{formatedPlayTime}}</text>
+      <text class="time-small">{{formatedRecordTime}}</text>
+    </view>
+    <view class="page-body-buttons">
+      <view class="page-body-button"></view>
+      <view class="page-body-button" bindtap="startRecord">
+        <view class="button-start-record">start</view>
+      </view>
+      <view class="page-body-button"></view>
+    </view>
+    <view class="page-body-button" bindtap="playVoice">
+      <view class="button-play-record">play</view>
+    </view>
+    <view class="page-body-buttons">
+      <view class="page-body-button" bindtap="stopVoice">
+        <view class="button-stop-record">stop</view>
+      </view>
+      <view class="page-body-button" bindtap="pauseVoice">
+        <view class="button-pause-record">pause</view>
+      </view>
+      <view class="page-body-button" bindtap="clear">
+        <view class="button-trash-record">trash</view>
+      </view>
+    </view> -->
+  </view>
+</view>

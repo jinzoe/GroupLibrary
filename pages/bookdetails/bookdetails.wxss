@@ -1,0 +1,10 @@
+.bookitem{
+  margin: 30rpx;
+}
+button{
+  margin: 30rpx;
+  border-radius: 15rpx;
+}
+image{
+  height: 350rpx;
+}

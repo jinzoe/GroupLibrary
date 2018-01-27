@@ -1,0 +1,45 @@
+<text class='errorinfo'>{{errorinfo}}</text>
+<block wx:if="{{isLoading}}" class="weui-loadmore">
+  <i class="weui-loading"></i>
+  <span class="weui-loadmore__tips">正在加载</span>
+</block>
+<view  style='visibility:{{bookdetailvisible}};'>
+  <template is="bookdetails" class="bookdetailtem" data="{{bookinfo}}" ></template>  
+</view>
+
+<template name="bookdetails">
+  <view class='bookdetails' >
+    <view class='bookitem'>
+      <label>书名：</label>
+      <label>{{ bookinfo.title }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>副标题：</label>
+      <label>{{ bookinfo.subtitle }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>作者：</label>
+      <label>{{ bookinfo.author }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>译者：</label>
+      <label>{{ bookinfo.translator }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>页数：</label>
+      <label>{{ bookinfo.pages }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>出版社：</label>
+      <label>{{ bookinfo.publisher }}</label>
+    </view>
+     <view class='bookitem'>
+      <label>价格：</label>
+      <label>{{ bookinfo.price }}</label>
+    </view>
+    <view class='bookitem'>
+      <image src="{{bookinfo.image}}" class='bookcover'></image>
+    </view>
+    <button disabled>确认添加</button>
+  </view>
+</template>

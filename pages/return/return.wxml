@@ -1,0 +1,32 @@
+<view class="page">
+  <!-- 图书列表 -->
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <block wx:for="{{booklist}}" wx:for-item="bookinfo">
+          <template is="bookli" data="{{bookinfo}}"></template>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 图书列表模板 -->
+<template name="bookli">
+  <view class='weui-cell'>
+    <view class='weui-cell__bd'>
+      <navigator url="../bookdetails/bookdetails?id={{bookinfo.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="{{bookinfo.image}}" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{bookinfo.title}}</view>
+          <view class="weui-media-box__desc">{{bookinfo.author}}</view>
+        </view>
+      </navigator>
+    </view>
+    <view class="weui-cell__ft">
+      <switch check></switch>
+    </view>
+  </view>
+</template>
